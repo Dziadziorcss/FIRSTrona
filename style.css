@@ -1,0 +1,747 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: 'Monoton', cursive;
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	overflow: hidden;
+	width: 100%;
+	height: 100vh;
+	background-image: url(Oficjalnetlo.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+header {
+	position: relative;
+	margin: 0;
+	width: 100%;
+	top: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 18px;
+	background: transparent;
+}
+
+.logo {
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: whitesmoke;
+	font-size: 15px;
+}
+
+.logo a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo i {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: whitesmoke;
+	font-size: 25px;
+	padding: 2px;
+}
+
+.logo p {
+	margin: 2px;
+	padding: 4px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	color: whitesmoke;
+	font-size: 18px;
+	border: 2px dotted;
+	background: rgba(221, 219, 219, 0.144);
+	border-color: rgba(255, 0, 0, 0.267);
+	border-radius: 15px;
+	box-shadow: 3px 3px 3px 1px rgba(255, 251, 251, 0.288);
+}
+
+.napis {
+	color: rgb(248, 1, 1);
+	background: rgba(0, 0, 0, 0.74);
+	border: 1px dotted red;
+	border-radius: 35px;
+	display: flex;
+	margin: 35% auto;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 50%;
+}
+
+.napis p {
+	font-size: 3rem;
+	font-weight: bold;
+	letter-spacing: 0.2rem;
+	text-align: center;
+	overflow: hidden;
+	padding: 0.5rem;
+}
+
+.tekst {
+	border-radius: 15px;
+	font-weight: normal;
+	color: whitesmoke;
+}
+
+.kursor {
+	display: inline-block;
+	width: 3px;
+	margin-left: 0.2rem;
+	background-color: whitesmoke;
+	animation: blink 1s infinite;
+}
+
+.kursor.pisze {
+	margin: 0 auto;
+	animation: none;
+}
+
+@keyframes blink {
+	0% {
+		background-color: whitesmoke;
+	}
+	49% {
+		background-color: whitesmoke;
+	}
+	50% {
+		background-color: transparent;
+	}
+	99% {
+		background-color: transparent;
+	}
+	100% {
+		background-color: whitesmoke;
+	}
+}
+
+.tlo {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.code {
+	position: relative;
+	display: flex;
+}
+
+.code i {
+	position: relative;
+	width: 50px;
+	height: 20px;
+	margin: 0 4px;
+	border-radius: 50%;
+	text-align: center;
+	background: transparent;
+	color: red;
+	font-size: 35px;
+	animation: animate 1s linear infinite;
+	animation-duration: calc(105s / var(--i));
+}
+
+@keyframes animate {
+	0% {
+		transform: translateY(200vh) scale(0);
+	}
+	100% {
+		transform: translateY(-10vh) scale(1);
+	}
+}
+
+.glowny {
+	display: flex;
+	padding-left: 5px;
+	margin-left: 1%;
+}
+
+.glowny .main {
+	margin: 0 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.glowny .main span {
+	position: relative;
+	height: 60px;
+	width: 60px;
+	display: block;
+	z-index: 2;
+	border-radius: 50%;
+}
+
+.glowny .main span i {
+	font-size: 20px;
+	line-height: 60px;
+}
+
+.glowny .main .tooltip {
+	position: absolute;
+	top: 0px;
+	background: whitesmoke;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 6px 18px;
+	border-radius: 15px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .main:hover .tooltip {
+	top: -20px;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.glowny .main:hover span,
+.glowny .main:hover .tooltip {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.glowny .main .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 10px;
+	width: 10px;
+	background: whitesmoke;
+	bottom: -5px;
+	left: 20%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.glowny .aboutme {
+	margin: 0 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.glowny .aboutme span {
+	position: relative;
+	height: 60px;
+	width: 60px;
+	display: block;
+	z-index: 2;
+	border-radius: 50%;
+}
+
+.glowny .aboutme span i {
+	font-size: 20px;
+	line-height: 60px;
+}
+
+.glowny .aboutme .tooltip {
+	position: absolute;
+	top: 0px;
+	background: whitesmoke;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 6px 18px;
+	border-radius: 15px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .aboutme:hover .tooltip {
+	top: -20px;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.glowny .aboutme:hover span,
+.glowny .aboutme:hover .tooltip {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.glowny .aboutme .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 10px;
+	width: 10px;
+	background: whitesmoke;
+	bottom: -5px;
+	left: 30%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.glowny .cv {
+	margin: 0 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.glowny .cv span {
+	position: relative;
+	height: 60px;
+	width: 60px;
+	display: block;
+	z-index: 2;
+	border-radius: 50%;
+}
+
+.glowny .cv span i {
+	font-size: 20px;
+	line-height: 60px;
+}
+
+.glowny .cv .tooltip {
+	position: absolute;
+	top: 0px;
+	background: whitesmoke;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 6px 18px;
+	border-radius: 15px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .cv:hover .tooltip {
+	top: -20px;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.glowny .cv:hover span,
+.glowny .cv:hover .tooltip {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.glowny .cv .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 10px;
+	width: 10px;
+	background: whitesmoke;
+	bottom: -5px;
+	left: 40%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.glowny .interest {
+	margin: 0 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.glowny .interest span {
+	position: relative;
+	height: 60px;
+	width: 60px;
+	display: block;
+	z-index: 2;
+	border-radius: 50%;
+}
+
+.glowny .interest span i {
+	font-size: 20px;
+	line-height: 60px;
+}
+
+.glowny .interest .tooltip {
+	position: absolute;
+	top: 0px;
+	background: whitesmoke;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 6px 18px;
+	border-radius: 15px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .interest:hover .tooltip {
+	top: -20px;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.glowny .interest:hover span,
+.glowny .interest:hover .tooltip {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.glowny .interest .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 10px;
+	width: 10px;
+	background: whitesmoke;
+	bottom: -5px;
+	left: 20%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.glowny .kwa {
+	margin: 0 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.glowny .kwa span {
+	position: relative;
+	height: 60px;
+	width: 60px;
+	display: block;
+	z-index: 2;
+	border-radius: 50%;
+}
+
+.glowny .kwa span i {
+	font-size: 20px;
+	line-height: 60px;
+}
+
+.glowny .kwa .tooltip {
+	position: absolute;
+	top: 0px;
+	background: whitesmoke;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 6px 18px;
+	border-radius: 15px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .kwa:hover .tooltip {
+	top: -20px;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.glowny .kwa:hover span,
+.glowny .kwa:hover .tooltip {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.glowny .kwa .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 10px;
+	width: 10px;
+	background: whitesmoke;
+	bottom: -5px;
+	left: 20%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.glowny .contact {
+	margin: 0 20px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.glowny .contact span {
+	position: relative;
+	height: 60px;
+	width: 60px;
+	display: block;
+	z-index: 2;
+	border-radius: 50%;
+}
+
+.glowny .contact span i {
+	font-size: 20px;
+	line-height: 60px;
+}
+
+.glowny .contact .tooltip {
+	position: absolute;
+	top: 0px;
+	background: whitesmoke;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 6px 18px;
+	border-radius: 15px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .contact:hover .tooltip {
+	top: -20px;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.glowny .contact:hover span,
+.glowny .contact:hover .tooltip {
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.glowny .contact .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 10px;
+	width: 10px;
+	background: whitesmoke;
+	bottom: -5px;
+	left: 30%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+#menu-icon {
+	font-size: 40px;
+	color: whitesmoke;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	display: none;
+}
+
+@media (max-width: 1070px) {
+	header {
+		margin: 0 auto;
+		transition: 0.2s;
+	}
+
+	#menu-icon {
+		display: block;
+	}
+
+	.logo i {
+		display: block;
+	}
+
+	.logo p {
+		display: block;
+	}
+
+	.glowny {
+		margin: 0 auto;
+		background: rgba(0, 0, 0, 0.3);
+		backdrop-filter: blur(10px);
+		position: absolute;
+		top: -2000px;
+		width: 57vh;
+		height: 150vw;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		transition: all 1.5s ease;
+		text-align: center;
+		z-index: 2;
+	}
+
+	.napis {
+		color: rgb(248, 1, 1);
+		background: rgba(0, 0, 0, 0.74);
+		border: 1px dotted red;
+		border-radius: 35px;
+		display: flex;
+		margin: 0 auto;
+		margin-top: 100%;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		width: 90%;
+	}
+	
+	.napis p {
+		font-size: 1.3rem;
+		font-weight: bold;
+		letter-spacing: 0.2rem;
+		text-align: center;
+		overflow: hidden;
+		padding: 0.5rem;
+	}
+	
+	.tekst {
+		border-radius: 15px;
+		font-weight: normal;
+		color: whitesmoke;
+	}
+	
+	.kursor {
+		display: inline-block;
+		width: 3px;
+		margin-left: 0.1rem;
+		background-color: whitesmoke;
+		animation: blink 1s infinite;
+	}
+	
+	.kursor.pisze {
+		animation: none;
+	}
+	
+	@keyframes blink {
+		0% {
+			background-color: whitesmoke;
+		}
+		49% {
+			background-color: whitesmoke;
+		}
+		50% {
+			background-color: transparent;
+		}
+		99% {
+			background-color: transparent;
+		}
+		100% {
+			background-color: whitesmoke;
+		}
+	}
+
+	.glowny .main:hover .tooltip {
+		top: -10px;
+		left: -10px;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.glowny .main .tooltip:before {
+		position: absolute;
+		content: '';
+		height: 10px;
+		width: 10px;
+		background: whitesmoke;
+		bottom: -5px;
+		left: 60%;
+		transform: translateX(-50%) rotate(45deg);
+	}
+
+	.glowny .aboutme:hover .tooltip {
+		top: -10px;
+		left: -10px;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.glowny .aboutme .tooltip:before {
+		position: absolute;
+		content: '';
+		height: 10px;
+		width: 10px;
+		background: whitesmoke;
+		bottom: -5px;
+		left: 70%;
+		transform: translateX(-50%) rotate(45deg);
+	}
+
+	.glowny .cv:hover .tooltip {
+		top: -10px;
+		left: -10px;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.glowny .cv .tooltip:before {
+		position: absolute;
+		content: '';
+		height: 10px;
+		width: 10px;
+		background: whitesmoke;
+		bottom: -5px;
+		left: 50%;
+		transform: translateX(-50%) rotate(45deg);
+	}
+
+	.glowny .interest:hover .tooltip {
+		top: -10px;
+		left: -10px;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.glowny .interest .tooltip:before {
+		position: absolute;
+		content: '';
+		height: 10px;
+		width: 10px;
+		background: whitesmoke;
+		bottom: -5px;
+		left: 70%;
+		transform: translateX(-50%) rotate(45deg);
+	}
+
+	.glowny .kwa:hover .tooltip {
+		top: -10px;
+		left: -10px;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.glowny .kwa .tooltip:before {
+		position: absolute;
+		content: '';
+		height: 10px;
+		width: 10px;
+		background: whitesmoke;
+		bottom: -5px;
+		left: 35%;
+		transform: translateX(-50%) rotate(45deg);
+	}
+
+	.glowny .contact:hover .tooltip {
+		top: -10px;
+		left: -10px;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.glowny .contact .tooltip:before {
+		position: absolute;
+		content: '';
+		height: 10px;
+		width: 10px;
+		background: whitesmoke;
+		bottom: -5px;
+		left: 45%;
+		transform: translateX(-50%) rotate(45deg);
+	}
+
+	.glowny.open {
+		height: 160vw;
+		width: 100%;
+		z-index: 2;
+		top: 90%;
+	}
+}
